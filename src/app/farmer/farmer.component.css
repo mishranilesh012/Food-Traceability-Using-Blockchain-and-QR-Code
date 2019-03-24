@@ -1,0 +1,198 @@
+ngb-tableset{
+  width:90%;
+  border : 1px solid black;
+ }
+
+ .container{
+   margin-top:30px;
+   padding-top: 20px;
+ }
+ .tb1{
+  border : 1px solid black;
+  -webkit-box-shadow: 1px 2px 66px -8px rgba(5,5,5,1);
+-moz-box-shadow: 1px 2px 66px -8px rgba(5,5,5,1);
+box-shadow: 1px 2px 66px -8px rgba(5,5,5,1);
+ }
+ .bg-purple {
+  color: #fff;
+  background: -webkit-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+  background: -o-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+  background: -moz-linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+  background: linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);
+
+  -webkit-box-shadow: 0px 7px 45px -11px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 7px 45px -11px rgba(0,0,0,0.75);
+box-shadow: 0px 7px 45px -11px rgba(0,0,0,0.75);
+}
+
+.round{
+  border-radius: 90px;
+  height: 150px;
+  width: 200px;
+  margin-top: -70px;
+}
+
+.block{
+  padding-top: 10px;
+  padding-left: 100px;
+}
+.box1{
+  height: 150px;
+  width: 300px;
+  background-color: #0E0D1D;
+  opacity: 0.8;
+  border-radius: 12px;
+  float: left;
+  -webkit-box-shadow: 0px 9px 30px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 9px 30px -5px rgba(0,0,0,0.75);
+  box-shadow: 0px 9px 30px -5px rgba(0,0,0,0.75);
+}
+.box2{
+  height: 150px;
+  width: 300px;
+  background-color: #0E0D1D;
+  opacity: 0.8;
+  border-radius: 12px;
+  float: left;
+  margin-left: 15px;
+  -webkit-box-shadow: 0px 9px 30px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 9px 30px -5px rgba(0,0,0,0.75);
+  box-shadow: 0px 9px 30px -5px rgba(0,0,0,0.75);
+}
+.box3{
+  height: 150px;
+  width: 300px;
+  background-color: #0E0D1D;
+  opacity: 0.8;
+  border-radius: 12px;
+  float: left;
+  margin-left: 15px;
+  -webkit-box-shadow: 0px 9px 30px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 9px 30px -5px rgba(0,0,0,0.75);
+  box-shadow: 0px 9px 30px -5px rgba(0,0,0,0.75);
+}
+.jb{
+  text-align: center;
+}
+.jb1{
+  font-size: 40px;
+  color: white;
+}
+.jb2{
+  margin-top: 20px;
+  font-size: 17px;
+  color: white;
+}
+.jb3{
+  font-size: 30px;
+  color: white;
+}
+
+.btn1{
+  margin-top: -25px;
+  padding : 7px 40px 7px 40px;
+  border-radius: 20px;
+}
+.cpro{
+  background-color: #fff59d;
+}
+.card{
+  -webkit-box-shadow: 0px 9px 30px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 9px 30px -5px rgba(0,0,0,0.75);
+  box-shadow: 0px 9px 30px -5px rgba(0,0,0,0.75);
+}
+.texthead{
+  text-align: center;
+}
+.first{
+  color: red;
+}
+.tex {
+  color: red;
+  -moz-animation-duration: 1000ms;
+  -moz-animation-name: blink;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-name: blink;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+
+  animation-duration: 1000ms;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@-moz-keyframes blink {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes blink {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range, .custom-day:hover {
+  background-color: rgb(2, 117, 216);
+  color: white;
+}
+.custom-day.faded {
+  background-color: rgba(2, 117, 216, 0.5);
+}
+
+.otp{
+  margin-top: 10px;
+  margin-left: 80px;
+}
+
+.icon{
+  height: 40px;
+  width: 50px;
+  margin-left: 20px;
+}
+.tabss{
+  background: #34e89e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0f3443, #34e89e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0f3443, #34e89e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.lang{
+  width: 200px;
+  margin-left: 450px;
+  margin-top: -30px;
+  margin-bottom: 20px;
+}

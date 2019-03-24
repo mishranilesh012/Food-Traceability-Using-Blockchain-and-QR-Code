@@ -1,0 +1,635 @@
+
+<div class="jumbotron jumbotron-fluid bg-purple">
+    <div class="container">
+        <div class="text-center">
+            <img src="../../assets/profile12.jpg" class="round" alt="...">
+            <p class="lead">John Doe</p>
+          </div>
+          <div class="row">
+              <div class="block">
+                <div class="box1">
+                  <div class="col jb">
+                    <p class="jb2"> <span> <i class="fas fa-users ic2"></i> CONTACT</span></p>
+                      <h1 class="jb3">+9234567801</h1>
+                      <!-- <p class="jb2">Users</p> -->
+                  </div>
+                </div>
+                <div class="box2">
+                  <div class="col jb">
+                    <p class="jb2"><span> <i class="fas fa-users ic2"></i> ROLE</span></p>
+                      <h1 class="jb1">Processor</h1>
+                      <!-- <p class="jb2">Batches</p> -->
+                  </div>
+                </div>
+                <div class="box3">
+                  <div class="col jb">
+                    <p class="jb2"> <span><i class="fas fa-cogs ic2"></i> SETTING</span></p>
+                      <h1 class="jb1"><button type="button" [routerLink]="['/admin-batches']" class="btn btn-light btn1">Edit</button></h1>
+                      <!-- <p class="jb2"></p> -->
+                      <!-- <h1 class="jb1"><i class="fas fa-user ic1"></i></h1> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+      <!-- <h1 class="display-4">Fluid jumbotron</h1> -->
+
+    </div>
+  </div>
+<div class="container">
+  <ngb-tabset type="pills">
+
+    <!--Tab1-->
+    <ngb-tab title="Batch Info" [disabled]="tabP">
+      <ng-template ngbTabContent>
+        <br><br>
+        <h1 class="head">Batches Info</h1>
+
+        <!--Table-->
+        <div class="container">
+          <table class="table tb1">
+            <thead>
+              <tr class="thead-dark">
+                <th scope="col">QR Code</th>
+                <th scope="col">Batch Id</th>
+                <th scope="col">Batch Name</th>
+                <th scope="col">Phase</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="../../assets/qr.svg" class="icon"></td>
+                <th scope="row"> ff544f8176595c2a1fb20dc78ac17397fd9605c6</th>
+                <td>Farm_1</td>
+                <td>Processor</td>
+                <td><button type="button" class="btn btn-info"><i class="far fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                  <td><img src="../../assets/qr.svg" class="icon"></td>
+                <th scope="row"> ff544f8176595c2a1fb20dc78ac17397fd9605c6</th>
+                <td>Farm_2</td>
+                <td>Distributor</td>
+                <td><button type="button" class="btn btn-info"><i class="far fa-eye"></i></button></td>
+              </tr>
+              <tr>
+                  <td><img src="../../assets/qr.svg" class="icon"></td>
+                <th scope="row"> ff544f8176595c2a1fb20dc78ac17397fd9605c6</th>
+                <td>Farm_3</td>
+                <td>Farm Inspector</td>
+                <td><button type="button" class="btn btn-info"><i class="far fa-eye"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+          <!--/Table-->
+        </div>
+
+      </ng-template>
+    </ngb-tab>
+    <!--/Tab1-->
+
+    <!--Tab2-->
+    <ngb-tab title="Farmer Dashboard" [disabled]="tabP">
+      <ng-template ngbTabContent>
+        <br><br>
+       <div class="container">
+          <!--Cards-->
+        <div class="card">
+            <div class="card-header bg-primary">
+               <b>BATCH ID :</b> ff544f8176595c2a1fb20dc78ac17397fd9605c6
+            </div>
+            <div class="card-body colors">
+
+                  <div class="form">
+                      <div class="row">
+                          <div class="col 3">
+                            <label><b>FARMER NAME :</b></label><br>
+                            <label>Santosh Choudhary</label>
+                            <label></label>
+                          </div>
+                          <div class="col 3">
+                              <label><b>FARMER ID :</b></label><br>
+                              <label>BBSH123456</label>
+                          </div>
+                          <div class="col 3">
+                              <label><b>QUANTITY :</b></label><br>
+                              <label>100 KG</label>
+                          </div>
+                          <div class="col 3">
+                              <label><b>TYPE :</b></label><br>
+                              <label>Arabic</label>
+                          </div>
+                        </div><br><br>
+                        <div class="row">
+                            <div class="col 3">
+                              <label><b>FARM INSPECTOR :</b></label><br>
+                              <label>Sagar Mistry</label>
+                              <label></label>
+                            </div>
+                            <div class="col 3">
+                                <label><b>Price :</b></label><br>
+                                <label>Rs 20</label>
+                                <label></label>
+                              </div>
+                            <div class="col 3">
+                                <label><b>ESTIMATED PICKUP DATE :</b></label><br>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                      <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                                      <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"><i class="fas fa-calendar-alt"></i></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col 3">
+                                <label><b>REQUIRED QUANTITY :</b></label><br>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                          placeholder="Required Quantity">
+                            </div>
+
+                          </div><br><br>
+                          <div class="row">
+                              <div class="col 3">
+                                  <label><b>QUOTATION (Price per unit):</b></label><br>
+                                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                              placeholder="Price">
+                              </div>
+                            <div class="col 3">
+                                <div class="col 3">
+                                    <label><b> TOTAL PRICE :</b></label><br>
+                                    <input class="form-control" type="text" placeholder="Calculated Price" readonly>
+                                    <button type="button" class="btn btn-secondary calc">Calculate</button>
+                                </div>
+                            </div>
+
+                            <div class="col 3"></div>
+                            <div class="col 3"></div>
+                          </div>
+                          <button type="button" class="btn btn-secondary btnrequest">Submit</button>
+                  </div>
+
+            </div>
+          </div><br><br>
+          <!--/Cards-->
+       </div>
+
+      </ng-template>
+    </ngb-tab>
+    <!--/Tab2-->
+
+    <!--Tab3 -->
+    <ngb-tab title="Request to Purchase" [disabled]="tabP">
+      <ng-template ngbTabContent>
+        <br><br>
+        <h1 class="head">Request to Farmer</h1>
+
+        <!--Table-->
+        <div class="container">
+          <table class="table tb1">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Farmer Name</th>
+                <th scope="col">Crop Name</th>
+                <th scope="col">Farm Inspector</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> Alex Jordan</td>
+                <td>Coffee</td>
+                <td>Steve Smith</td>
+                <td>100kg</td>
+                <td>Pending...</td>
+              </tr>
+              <tr>
+                <td> Alex Jordan</td>
+                <td>Coffee</td>
+                <td>Shane Smith</td>
+                <td>50kg</td>
+                <td>Accepted</td>
+              </tr>
+              <tr>
+                <td> Arnold Maxwell</td>
+                <td>Coffee</td>
+                <td>Steve Rogers</td>
+                <td>60kg</td>
+                <td>Accepted</td>
+              </tr>
+            </tbody>
+          </table>
+          <!--/Table-->
+
+        </div>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab title="Verification" [disabled]="tabP">
+        <ng-template ngbTabContent><br><br>
+          <ngb-tabset type="pills">
+            <ngb-tab>
+              <ng-template ngbTabTitle>Goods Received</ng-template>
+              <ng-template ngbTabContent>
+                  <ng-template #content let-modal>
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="modal-basic-title">Goods Received</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Batch ID: </label>
+                                <input type="text" class="form-control"   placeholder="Enter Batch ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Crop ID: </label>
+                                <input type="text" class="form-control"   placeholder="Enter Crop ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Farmer ID: </label>
+                                <input type="text" class="form-control"   placeholder="Enter Farmer ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Farmer Name: </label>
+                                <input type="text" class="form-control"   placeholder="Enter Farmer Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Quantity: </label>
+                                <input type="text" class="form-control"   placeholder="Enter Quantity">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Type: </label>
+                                <input type="text" class="form-control"   placeholder="Enter Type">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Price: </label>
+                                <input type="text" class="form-control"   placeholder="Enter Price">
+                            </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Update</button>
+                      </div>
+                    </ng-template>
+                  <br>
+                  <button type="button" class="btn btn-success" (click)="open(content)"> Verify & Update</button>
+                  <br><br>
+                  <table class="table">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">Batch ID</th>
+                          <th scope="col">Crop ID</th>
+                          <th scope="col">Farmer ID</th>
+                          <th scope="col">Farmer Name</th>
+                          <th scope="col">Quantity</th>
+                          <th scope="col">Type</th>
+                          <th scope="col">Price</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Batch_101</td>
+                          <td>C_222</td>
+                          <td>F_111</td>
+                          <td>Mark</td>
+                          <td>30 KG</td>
+                          <td>Arabica</td>
+                          <td>Rs 20</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab>
+              <ng-template ngbTabTitle>Verification with Inspector</ng-template>
+              <ng-template ngbTabContent>
+                  <ng-template #content let-modal>
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="modal-basic-title">Goods Received</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Batch ID: </label>
+                                <input type="text" class="form-control"   placeholder="Enter Batch ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Crop ID: </label>
+                                <input type="text" class="form-control"   placeholder="Enter Crop ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Farmer ID: </label>
+                                <input type="text" class="form-control"   placeholder="Enter Farmer ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Processor Name: </label>
+                                <input type="text" class="form-control"   placeholder="Enter Farmer Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Type: </label>
+                                <input type="text" class="form-control"   placeholder="Enter Type">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Inspection Date: </label>
+                                <div class="input-group">
+                                    <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"><i class="far fa-calendar-alt"></i></button>
+                                    </div>
+                                  </div>
+                            </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Update</button>
+                      </div>
+                    </ng-template>
+                  <br>
+                  <button type="button" class="btn btn-success" (click)="open(content)"> Verify & Update</button>
+                  <br><br>
+                  <table class="table">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">Batch ID</th>
+                          <th scope="col">Crop ID</th>
+                          <th scope="col">Farmer ID</th>
+                          <th scope="col">Processor Name</th>
+                          <th scope="col">Type</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Inspection Date</th>
+                          <th scope="col">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Batch_101</td>
+                          <td>C_222</td>
+                          <td>F_111</td>
+                          <td>Mark</td>
+                          <td>Arabica</td>
+                          <td>Rs 20</td>
+                          <td>22/03/2019</td>
+                          <td>Verified</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+              </ng-template>
+            </ngb-tab>
+          </ngb-tabset>
+        </ng-template>
+
+      </ngb-tab>
+
+        <!--Tab4-->
+        <ngb-tab title="Distributor Dashboard" [disabled]="tabP">
+          <ng-template ngbTabContent>
+            <br><br>
+            <h1 class="head">Request from Distributor</h1>
+
+            <!--Table-->
+            <div class="container">
+               <!--Cards-->
+        <div class="card">
+            <div class="card-header bg-primary">
+               <b>DISTRIBUTOR ID:</b> 8ac17397fd9605c6
+            </div>
+            <div class="card-body colors">
+
+                  <div class="form">
+                      <div class="row">
+                          <div class="col 3">
+                            <label><b>DISTRIBUTOR NAME :</b></label><br>
+                            <label>Nilesh Mishra</label>
+                            <label></label>
+                          </div>
+
+                          <div class="col 3">
+                              <label><b>TYPE :</b></label><br>
+                              <label>Arabic</label>
+                          </div>
+                          <div class="col 3">
+                              <label><b> REQUIRED QUANTITY :</b></label><br>
+                              <label>100 KG</label>
+                          </div>
+                          <div class="col 3">
+                              <label><b>SELECT BATCH ID :</b></label><br>
+                              <select class="form-control">
+                                  <option>Select Batch</option>
+                                  <option value="Administrator">Administrator</option>
+                                  <option value="Farmer">Farmer</option>
+                                  <option value="Food Processor">Food Processor</option>
+                                  <option value="Distributer">Distributer</option>
+                                  <option value="Retailer">Retailer</option>
+                              </select>
+                          </div>
+                        </div><br><br>
+                        <div class="row">
+
+                            <div class="col 3">
+                                <label><b>SELECT PACKAGE ID :</b></label><br>
+                                <select class="form-control">
+                                    <option>Select Package</option>
+                                    <option value="Administrator">Administrator</option>
+                                    <option value="Farmer">Farmer</option>
+                                    <option value="Food Processor">Food Processor</option>
+                                    <option value="Distributer">Distributer</option>
+                                    <option value="Retailer">Retailer</option>
+                                </select>
+                            </div>
+                            <div class="col 3">
+                                <label><b>ESTIMATED DELIVERY DATE :</b></label><br>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                      <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                                      <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"><i class="fas fa-calendar-alt"></i></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="col 3">
+                                <label><b>QUANTITY :</b></label><br>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                          placeholder="Enter Quantity">
+                            </div>
+
+                            <div class="col 3">
+                                <label><b>QUOTATION (Price per unit):</b></label><br>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Price">
+
+                            </div>
+                          </div><br>
+                          <div class="row">
+                              <div class="col 3">
+                                  <label><b> TOTAL PRICE :</b></label><br>
+                                <input class="form-control" type="text" placeholder="Calculated Price" readonly>
+                                <button type="button" class="btn btn-secondary calc">Calculate</button>
+                              </div>
+                              <div class="col 3"></div>
+                              <div class="col 3"></div>
+                              <div class="col 3"></div>
+                            </div>
+                          <button type="button" class="btn btn-secondary btnrequest">Submit</button>
+                  </div>
+
+            </div>
+          </div><br><br>
+
+            </div>
+
+          </ng-template>
+        </ngb-tab>
+        <!--/Tab4-->
+
+    <!--Tab4-->
+    <ngb-tab title=" Sold Batches" [disabled]="tabP">
+      <ng-template ngbTabContent>
+        <br><br>
+        <h1 class="head">Batches sold to distributor</h1>
+
+        <!--Table-->
+        <div class="container">
+          <table class="table tb1">
+            <thead>
+              <tr class="thead-dark">
+                <th scope="col">Distributor Id</th>
+                <th scope="col">Distributor Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Product</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total Price</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table">
+                <td>ff544f8176595c2a1fb20dc78ac17397fd9605c6</td>
+                <td>Alex Jordan</td>
+                <td>New York</td>
+                <td>Coffee</td>
+                <td>100</td>
+                <td>Rs 10/-</td>
+                <td>1000</td>
+
+              </tr>
+            </tbody>
+          </table>
+          <!--/Table-->
+        </div>
+
+      </ng-template>
+    </ngb-tab>
+    <!--/Tab4-->
+
+    <ngb-tab title=" Transportation" [disabled]="tabT">
+        <ng-template ngbTabContent>
+          <br><br>
+          <ng-template #content let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Goods Received</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Batch ID: </label>
+                        <input type="text" class="form-control"   placeholder="Enter Batch ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Crop ID: </label>
+                        <input type="text" class="form-control"   placeholder="Enter Crop ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Farmer ID: </label>
+                        <input type="text" class="form-control"   placeholder="Enter Farmer ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Farmer Name: </label>
+                        <input type="text" class="form-control"   placeholder="Enter Farmer Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Type: </label>
+                        <input type="text" class="form-control"   placeholder="Enter Type">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Quantity: </label>
+                        <input type="text" class="form-control"   placeholder="Enter Quantity">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Pickup Date: </label>
+                        <div class="input-group">
+                            <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                            <div class="input-group-append">
+                              <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"><i class="far fa-calendar-alt"></i></button>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Transporter Name: </label>
+                        <input type="text" class="form-control"   placeholder="Enter Transporter Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Vehicle Number : </label>
+                        <input type="text" class="form-control"   placeholder="Enter Vehicle Number">
+                    </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')" [disabled]="btn">Update</button>
+              </div>
+            </ng-template>
+            <h1 class="trans">Transportation Details</h1>
+          <br>
+          <button type="button" class="btn btn-success" (click)="open(content)"> Verify & Update</button>
+          <br><br>
+          <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Batch ID</th>
+                  <th scope="col">Crop ID</th>
+                  <th scope="col">Farmer ID</th>
+                  <th scope="col">Farmer Name</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Inspection Date</th>
+                  <th scope="col">Transporter Name</th>
+                  <th scope="col">Vehicle Number</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Batch_101</td>
+                  <td>C_222</td>
+                  <td>F_111</td>
+                  <td>Mark</td>
+                  <td>Arabica</td>
+                  <td>50 KG</td>
+                  <td>22/03/2019</td>
+                  <td>Rakesh</td>
+                  <td>MH-4210</td>
+                </tr>
+
+              </tbody>
+            </table>
+        </ng-template>
+      </ngb-tab>
+
+  </ngb-tabset>
+
+</div>
+<!--/container-->
+

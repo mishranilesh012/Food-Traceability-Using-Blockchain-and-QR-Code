@@ -1,0 +1,259 @@
+
+<div class="jumbotron jumbotron-fluid bg-purple">
+    <div class="container">
+        <div class="text-center">
+            <img src="../../assets/profile12.jpg" class="round" alt="...">
+            <p class="lead">John Doe</p>
+          </div>
+          <div class="row">
+              <div class="block">
+                <div class="box1">
+                  <div class="col jb">
+                    <p class="jb2"> <span> <i class="fas fa-users ic2"></i> CONTACT</span></p>
+                      <h1 class="jb3">+9234567801</h1>
+                      <!-- <p class="jb2">Users</p> -->
+                  </div>
+                </div>
+                <div class="box2">
+                  <div class="col jb">
+                    <p class="jb2"><span> <i class="fas fa-users ic2"></i> ROLE</span></p>
+                      <h1 class="jb1">Farm Inspector</h1>
+                      <!-- <p class="jb2">Batches</p> -->
+                  </div>
+                </div>
+                <div class="box3">
+                  <div class="col jb">
+                    <p class="jb2"> <span><i class="fas fa-cogs ic2"></i> SETTING</span></p>
+                      <h1 class="jb1"><button type="button" [routerLink]="['/admin-batches']" class="btn btn-light btn1">Edit</button></h1>
+                      <!-- <p class="jb2"></p> -->
+                      <!-- <h1 class="jb1"><i class="fas fa-user ic1"></i></h1> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+      <!-- <h1 class="display-4">Fluid jumbotron</h1> -->
+
+    </div>
+  </div>
+<div class="container">
+  <ngb-tabset type="pills">
+    <!--Tab1-->
+    <ngb-tab title="Request Received">
+      <ng-template ngbTabContent>
+        <!--Modal-->
+        <ng-template #content let-c="close" let-d="dismiss">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Request Received</h4>
+            <button type="button" class="close" aria-label="Close" (click)="('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!--Modal Body-->
+            <form>
+                <div class="form-group">
+                    <label>QR Code</label><br>
+                    <img src="../../assets/qr.svg" class="icon">
+                  </div>
+              <div class="form-group">
+                <label for="Cropid">Crop id</label>
+                <input type="text" class="form-control" id="Cropid" placeholder="Cropid">
+              </div>
+              <div class="form-group">
+                <label for="Batchid">Batch id</label>
+                <input type="text" class="form-control" id="Cropid" placeholder="Batchid">
+              </div>
+              <div class="form-group">
+                <label for="InspectorName">Inspector Name</label>
+                <input type="text" class="form-control" id="InspectorName" placeholder="Inspector Name">
+              </div>
+              <div class="form-group">
+                <label for="CropType">Crop Type</label>
+                <input type="text" class="form-control" id="CropType" placeholder="Crop Type">
+              </div>
+              <div class="form-group">
+                <label for="Fertilizers">Fertilizers</label>
+                <input type="text" class="form-control" id="Fertilizers" placeholder="Fertilizers">
+              </div>
+              <div class="form-group">
+                <label for="Humidity">Humidity</label>
+                <input type="text" class="form-control" id="Humidity" placeholder="Humidity">
+              </div>
+              <div class="form-group">
+                <label for="Estimated">Estimated Expiry Date</label>
+                <div class="input-group">
+                  <input id="Estimated" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"><i class="far fa-calendar-alt"></i></button>
+                   </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Cropid"><b>Grade</b></label>
+                  <select class="form-control">
+                    <option>Select Grade</option>
+                    <option value="Administrator">A+</option>
+                    <option value="Farmer">A</option>
+                    <option value="Food Processor">B+</option>
+                    <option value="Distributer">B</option>
+                    <option value="Retailer">C</option>
+                </select>
+              </div>
+              <div class="form-group">
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                      <label for="Sell">Ready to sell&nbsp; &nbsp;</label>
+                      <button type="button" class="btn btn-primary">Yes</button>
+                      <button type="button" class="btn btn-primary">No</button>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label>Farm Photo</label><br>
+                <div class="input-group mb-3">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                  <label>QR Code</label><br>
+                  <img src="../../assets/qr.svg" class="icon">
+                </div>
+
+            </form>
+            <!--/Modal Body-->
+
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-primary" (click)="('Save click')">Submit</button>
+          </div>
+        </ng-template>
+
+        <br><br>
+
+        <!--/Modal-->
+
+        <!--Table-->
+        <table class="table tb1">
+          <thead>
+            <tr class="thead-dark">
+              <th scope="col">Farmer Name</th>
+              <th scope="col">Farmer Address</th>
+              <th scope="col">Date & Time for Inspection</th>
+              <th scope="col">Get OTP</th>
+              <th scope="col">Update</th>
+              <th scope="col">Reject</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>Mumbai</td>
+              <td>27/02/19</td>
+              <td>
+                <input class="form-control" type="text" placeholder="436885" readonly>
+                <button type="button" class="btn btn-secondary btn-sm calc">Generate</button>
+              </td>
+              <td><button class="btn btn-success" (click)="open(content)">Update(Disabled)</button></td>
+              <td><button class="btn btn-danger">Reject</button></td>
+
+            </tr>
+          </tbody>
+        </table>
+        <!--/Table-->
+      </ng-template>
+    </ngb-tab>
+    <!--/Tab1-->
+
+    <!--Tab2-->
+    <ngb-tab title="Updated Farmer Details">
+      <ng-template ngbTabContent>
+        <br><br>
+        <!--Table-->
+        <table class="table tb1">
+          <thead>
+            <tr class="thead-dark">
+              <th scope="col">Batch id</th>
+              <th scope="col">Crop Name</th>
+              <th scope="col">Inspector Name</th>
+              <th scope="col">Fertilizer</th>
+              <th scope="col">Crop Type</th>
+              <th scope="col">Humidity</th>
+              <th scope="col">Temperature</th>
+              <th scope="col">Estimated Expiry Date</th>
+              <th scope="col">Grade</th>
+              <th scope="col">Ready to Sell</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BJHF9686</td>
+              <td>Coffee</td>
+              <td>Alex Doe</td>
+              <td>Compost</td>
+              <td>Arabica </td>
+              <td>12%</td>
+              <td>160 F</td>
+              <td>29/02/19</td>
+              <td>A+</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+        <!--/Table-->
+      </ng-template>
+    </ngb-tab>
+    <!--/Tab2-->
+
+    <ngb-tab title="Processor Request">
+      <ng-template ngbTabContent>
+        <br><br>
+        <!--Table-->
+        <table class="table tb1">
+          <thead>
+            <tr class="thead-dark">
+              <th scope="col">Batch id</th>
+              <th scope="col">Crop ID</th>
+              <th scope="col">Farmer ID</th>
+              <th scope="col">Processor Name</th>
+              <th scope="col">Crop Type</th>
+              <th scope="col">Inspection Date</th>
+              <th scope="col">Verification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BJHF9686</td>
+              <td>C_101</td>
+              <td>F_111</td>
+              <td>Alex Doe</td>
+              <td>Arabica </td>
+              <td>22/03/2019</td>
+
+              <td>
+                <button type="button" class="btn btn-primary">Verify</button>
+              </td>
+            </tr>
+            <tr>
+              <td>BJHF9686</td>
+              <td>C_101</td>
+              <td>F_222</td>
+              <td>Alex Doe</td>
+              <td>Arabica </td>
+              <td>18/08/2018</td>
+              <td>
+                <img src="../../assets/verified.svg" class="icon">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!--/Table-->
+      </ng-template>
+    </ngb-tab>
+
+
+  </ngb-tabset>
+
+</div>
+<!--/container-->

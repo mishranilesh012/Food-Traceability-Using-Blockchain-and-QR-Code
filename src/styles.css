@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body{
+  padding-top: 55px;
+  font-family: 'Acme', sans-serif;
+    /* background-color: #EDF0F5; } */
+}
+    tr:nth-child(odd) {
+      background: #bbdefb;
+    }

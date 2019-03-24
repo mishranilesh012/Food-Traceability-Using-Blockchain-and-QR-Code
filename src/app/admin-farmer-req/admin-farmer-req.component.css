@@ -1,0 +1,32 @@
+.tb1{
+  border: 1px solid black;
+  -webkit-box-shadow: 1px 2px 66px -8px rgba(5,5,5,1);
+-moz-box-shadow: 1px 2px 66px -8px rgba(5,5,5,1);
+box-shadow: 1px 2px 66px -8px rgba(5,5,5,1);
+}
+
+.head{
+  text-align: center;
+  padding-top: 70px;
+}
+.btn1{
+  padding : 10px 60px 10px 60px;
+  margin-left: 600px;
+}
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+}
+.custom-day.focused {
+  background-color: #e6e6e6;
+}
+.custom-day.range, .custom-day:hover {
+  background-color: rgb(2, 117, 216);
+  color: white;
+}
+.custom-day.faded {
+  background-color: rgba(2, 117, 216, 0.5);
+}

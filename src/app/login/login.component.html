@@ -1,0 +1,25 @@
+<div class="contain">
+    <div class="login-box">
+        <img src="../../assets/avatar.png" class="avatar">
+            <h1>Login Here</h1>
+
+                    <div class="">Phone Number
+                      <input type="text" name="username" placeholder="Enter Username">
+                      <label>Password</label>
+                      <input type="password" name="password" placeholder="Enter Password">
+                      <label>Select Role </label>
+                      <select class="custom-select">
+                          <option value="Administrator">Administrator</option>
+                          <option value="Farmer">Farmer </option>
+                          <option value="Food Processor">Food Processor</option>
+                          <option value="Distributer">Distributer</option>
+                          <option value="Retailer">Retailer</option>
+                          <option value="Transportor">Transportor</option>
+                      </select>
+                      <input [routerLink]="['/adminportal']" type="submit" name="submit" value="Login">
+
+                      <a [routerLink]="['/']">Forget Password </a>
+                    </div>
+    </div>
+
+</div>

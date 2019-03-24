@@ -1,0 +1,747 @@
+<div class="jumbotron jumbotron-fluid bg-purple">
+  <div class="container">
+      <div class="text-center">
+          <img src="../../assets/profile12.jpg" class="round" alt="...">
+          <p class="lead">John Doe</p> <br>
+          <div class="lang">
+              <select class="form-control" (change)="draw ($event)">
+                  <option>Select Langauge</option>
+                  <option value="English">English</option>
+                  <option value="Hindi">हिंदी</option>
+              </select>
+          </div>
+        </div>
+        <div class="row">
+            <div class="block">
+              <div class="box1">
+                <div class="col jb">
+                  <div *ngIf="engStatus">
+                      <p class="jb2"> <span> <i class="fas fa-users ic2"></i> CONTACT</span></p>
+                      <h1 class="jb3">+9234567801</h1>
+                  </div>
+                  <div *ngIf="hinStatus">
+                      <p class="jb2"> <span> <i class="fas fa-users ic2"></i> संपर्क</span></p>
+                      <h1 class="jb3">+9234567801</h1>
+                  </div>
+
+                </div>
+              </div>
+              <div class="box2">
+                <div class="col jb">
+                  <div *ngIf="engStatus">
+                      <p class="jb2"><span> <i class="fas fa-users ic2"></i> ROLE</span></p>
+                      <h1 class="jb1">Farmer</h1>
+                  </div>
+                  <div *ngIf="hinStatus">
+                      <p class="jb2"><span> <i class="fas fa-users ic2"></i> भूमिका</span></p>
+                      <h1 class="jb1">किसान</h1>
+                  </div>
+
+                </div>
+              </div>
+              <div class="box3">
+                <div class="col jb">
+                  <div *ngIf="engStatus">
+                      <p class="jb2"> <span><i class="fas fa-cogs ic2"></i> SETTING</span></p>
+                      <h1 class="jb1"><button type="button" [routerLink]="['/admin-batches']" class="btn btn-light btn1">Edit</button></h1>
+                  </div>
+                  <div *ngIf="hinStatus">
+                      <p class="jb2"> <span><i class="fas fa-cogs ic2"></i> सेटिंग</span></p>
+                      <h1 class="jb1"><button type="button" [routerLink]="['/admin-batches']" class="btn btn-light btn1">Edit</button></h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+  </div>
+</div>
+<div class="container" *ngIf="engStatus">
+  <ngb-tabset type="pills">
+
+    <ngb-tab title="Requested Status">
+      <ng-template ngbTabContent>
+
+        <ng-template #content let-c="close" let-d="dismiss">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Adding Status</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <form>
+              <div class="form-group">
+                <label for="Cropid"><b>Crop id</b></label>
+                <input type="text" class="form-control" id="Cropid" placeholder="Cropid">
+              </div>
+            </form>
+
+            <label for="Cropid"><b>Select Date Range for Inspection:</b></label>
+            <ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+            </ngb-datepicker>
+            <ng-template #t let-date let-focused="focused">
+              <span class="custom-day"
+                    [class.focused]="focused"
+                    [class.range]="isRange(date)"
+                    [class.faded]="isHovered(date) || isInside(date)"
+                    (mouseenter)="hoveredDate = date"
+                    (mouseleave)="hoveredDate = null">
+                {{ date.day }}
+              </span>
+            </ng-template>
+
+
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-primary" (click)="c('Save click')">Submit</button>
+          </div>
+        </ng-template>
+
+        <br><br>
+        <button class="btn btn-success" (click)="open(content)">Create Batch</button>
+        <br><br>
+
+
+        <h3 class="head">Requested New Batch Information</h3>
+        <table class="table tb1">
+          <thead>
+            <tr class="thead-dark">
+              <th scope="col">Crop id</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CHG12345</td>
+              <td>Pending..</td>
+            </tr>
+          </tbody>
+        </table><br><br>
+
+        <h3 class="head">Accepted Information</h3>
+        <table class="table tb1">
+          <thead>
+            <tr class="thead-dark">
+              <th scope="col">QR Code</th>
+              <th scope="col">Crop id</th>
+              <th scope="col">Batch ID</th>
+              <th scope="col">Inspector ID</th>
+              <th scope="col">Inspector Name</th>
+              <th scope="col">Estimated Inspection Date</th>
+              <th scope="col">Status</th>
+              <th scope="col">Inspector OTP</th>
+              <th scope="col">Verification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="../../assets/qr.svg" class="icon"></td>
+              <td>CHG12345</td>
+              <td>Batch 21</td>
+              <td>IN2425</td>
+              <td>Swapnil</td>
+              <td>12/03/2019</td>
+              <td>Accepted</td>
+              <td>
+                <form>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="OTP" placeholder="OTP">
+                    <button type="button" class="btn btn-primary btn-sm otp disabled">Submit</button>
+                  </div>
+                </form>
+              </td>
+              <td>
+                <img src="../../assets/verified.svg" class="icon">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab title="Batch Status">
+      <ng-template ngbTabContent>
+        <br><br>
+
+        <table class="table tb1">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">QR Code</th>
+              <th scope="col">Batch id</th>
+              <th scope="col">Batch Name</th>
+              <th scope="col">Phase</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="thead-dark">
+              <td><img src="../../assets/qr.svg" class="icon"></td>
+              <td>BJHF9686</td>
+              <td>Coffee Batch 1 </td>
+              <td>Processor</td>
+              <td>View</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </ng-template>
+    </ngb-tab>
+
+
+
+    <ngb-tab title="Sell">
+      <ng-template ngbTabContent>
+
+         <ng-template #content let-c="close" let-d="dismiss">
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Adding Selling Details</h4>
+              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <form>
+                <div class="form-group">
+                  <label for="Cropid"><b>Crop id</b></label>
+                  <select class="form-control">
+                    <option>Select Crop ID</option>
+                    <option value="Administrator">CH_101</option>
+                    <option value="Farmer">CH_102</option>
+                    <option value="Food Processor">CH_103</option>
+                    <option value="Distributer">CH_104</option>
+                    <option value="Retailer">CH_105</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <label for="Cropid"><b>Batch ID</b></label>
+                    <select class="form-control">
+                      <option>Select Batch ID</option>
+                      <option value="Administrator">BH_101</option>
+                      <option value="Farmer">BH_102</option>
+                      <option value="Food Processor">BH_103</option>
+                      <option value="Distributer">BH_104</option>
+                      <option value="Retailer">BH_105</option>
+                  </select>
+                  </div>
+                <div class="form-group">
+                    <label for="CropVariety"><b>Crop Variety</b></label>
+                    <input type="text" class="form-control" id="CropVariety" placeholder="Crop Variety">
+                  </div>
+                <div class="form-group">
+                  <label for="InspectionDate&Time"><b>Inspection Date & Time</b></label>
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"><i class="fas fa-calendar-alt"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label for="InspectorName"><b>Inspector Name</b></label>
+                    <input type="text" class="form-control" id="Cropid" placeholder="Inspector Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="CropType"><b>Quantity :</b></label>
+                    <input type="text" class="form-control" id="Quantity" placeholder="Quantity">
+                  </div>
+                  <div class="form-group">
+                    <label for="CropType"><b>Minimum Price :</b></label>
+                    <input type="text" class="form-control" id="Minimum Price" placeholder="Minimum Selling Price">
+                  </div>
+                  <div class="form-group">
+                    <label for="CropType"><b>Maximum Price :</b></label>
+                    <input type="text" class="form-control" id="Maximum Price" placeholder="Maximum Selling Price">
+                  </div>
+              </form>
+
+
+            </div>
+            <div class="modal-footer">
+
+              <button type="button" class="btn btn-primary" (click)="c('Save click')">Submit</button>
+            </div>
+          </ng-template>
+
+          <br><br>
+          <button class="btn btn-success" (click)="open(content)">Sell Batch</button>
+          <br><br>
+
+
+        <table class="table tb1">
+          <thead>
+            <tr class="thead-dark">
+              <th scope="col">QR Code</th>
+              <th scope="col">Crop id</th>
+              <th scope="col">Batch id</th>
+              <th scope="col">Crop Type</th>
+              <th scope="col">Crop Variety</th>
+              <th scope="col">Expiry Date</th>
+              <th scope="col">Farm Inspector</th>
+              <th scope="col">Inspection Date</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Minimum Price</th>
+              <th scope="col">Maximum Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="../../assets/qr.svg" class="icon"></td>
+              <td>CHG12345</td>
+              <td>BJHF9686</td>
+              <td>Blue Mountain</td>
+              <td>Crop Variety 1</td>
+              <td>11/7/2016</td>
+              <td>John Doe</td>
+              <td>2/8/19</td>
+              <td>100KG</td>
+              <td>Rs 12</td>
+              <td>Rs 15</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab title="Processor Request">
+      <ng-template ngbTabContent>
+       <br><br>
+
+        <div class="row">
+          <div class="col 4">
+
+            <div class="card">
+              <div class="card-header  bg-warning">
+                  <label><b>Batch ID : </b>B_101</label>
+              </div>
+              <div class="card-body cpro">
+                <blockquote class="blockquote mb-0">
+                    <label><b>Processor ID : </b>P_101</label>
+                    <label><b>Processor Name :</b> Umang Mavani</label><br>
+                    <label><b>Quantity :</b> 100 KG</label><br>
+                    <label><b>Price :</b> Rs 1200</label><br>
+                  <button type="button" class="btn btn-success">Approve</button><br><br>
+                  <h3 class="head texthead">3rd Recommended</h3>
+                </blockquote>
+              </div>
+            </div>
+
+          </div>
+          <div class="col 4">
+
+            <div class="card">
+              <div class="card-header bg-warning">
+                  <label><b>Batch ID : </b>B_101</label>
+              </div>
+              <div class="card-body cpro">
+                <blockquote class="blockquote mb-0">
+                  <label><b>Processor ID : </b>P_102</label>
+                  <label><b>Processor Name :</b> Nilesh Mishra</label><br>
+                  <label><b>Quantity :</b> 100 KG</label><br>
+                  <label><b>Price :</b> Rs 1800</label><br>
+                  <button type="button" class="btn btn-success">Approve</button><br><br>
+                  <h2 class="head texthead first tex">1st Recommended</h2>
+                </blockquote>
+              </div>
+            </div>
+
+          </div>
+          <div class="col 4">
+
+              <div class="card">
+                <div class="card-header  bg-warning">
+                  <label><b>Batch ID : </b>B_101</label>
+                </div>
+                <div class="card-body cpro">
+                  <blockquote class="blockquote mb-0">
+                      <label><b>Processor ID : </b>P_103</label>
+                      <label><b>Processor Name :</b> Sagar Mistry</label><br>
+                      <label><b>Quantity :</b> 100 KG</label><br>
+                      <label><b>Price :</b> Rs 1500</label><br>
+                    <button type="button" class="btn btn-success">Approve</button><br><br>
+                    <h3 class="head texthead">2nd Recommended</h3>
+                  </blockquote>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+
+
+  </ngb-tabset>
+
+</div>
+
+
+
+
+
+
+<!-- <div class="jumbotron jumbotron-fluid bg-purple">
+  <div class="container">
+      <div class="text-center">
+          <img src="../../assets/profile12.jpg" class="round" alt="...">
+          <p class="lead">John Doe</p>
+        </div>
+        <div class="row">
+            <div class="block">
+              <div class="box1">
+                <div class="col jb">
+                  <p class="jb2"> <span> <i class="fas fa-users ic2"></i> संपर्क</span></p>
+                    <h1 class="jb3">+9234567801</h1>
+
+                </div>
+              </div>
+              <div class="box2">
+                <div class="col jb">
+                  <p class="jb2"><span> <i class="fas fa-users ic2"></i> भूमिका</span></p>
+                    <h1 class="jb1">किसान</h1>
+
+                </div>
+              </div>
+              <div class="box3">
+                <div class="col jb">
+                  <p class="jb2"> <span><i class="fas fa-cogs ic2"></i> सेटिंग</span></p>
+                    <h1 class="jb1"><button type="button" [routerLink]="['/admin-batches']" class="btn btn-light btn1">Edit</button></h1>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+  </div>
+</div> -->
+<div class="container" *ngIf="hinStatus">
+  <ngb-tabset type="pills">
+
+    <ngb-tab title="अनुरोधित स्थिति">
+      <ng-template ngbTabContent>
+
+        <ng-template #content let-c="close" let-d="dismiss">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">अनुरोध विवरण जोड़ना</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <form>
+              <div class="form-group">
+                <label for="Cropid"><b>फसल आईडी</b></label>
+                <input type="text" class="form-control" id="Cropid" placeholder="Cropid">
+              </div>
+            </form>
+
+            <label for="Cropid"><b>निरीक्षण के लिए तिथि सीमा चुनें:</b></label>
+            <ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+            </ngb-datepicker>
+            <ng-template #t let-date let-focused="focused">
+              <span class="custom-day"
+                    [class.focused]="focused"
+                    [class.range]="isRange(date)"
+                    [class.faded]="isHovered(date) || isInside(date)"
+                    (mouseenter)="hoveredDate = date"
+                    (mouseleave)="hoveredDate = null">
+                {{ date.day }}
+              </span>
+            </ng-template>
+
+
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-primary" (click)="c('Save click')">भेजें</button>
+          </div>
+        </ng-template>
+
+        <br><br>
+        <button class="btn btn-success" (click)="open(content)">नया बैच बनाएँ</button>
+        <br><br>
+
+        <h3 class="head">अनुरोधित बैच के लिए विवरण</h3>
+        <table class="table tb1">
+          <thead>
+            <tr class="thead-dark">
+              <th scope="col">फसल आईडी</th>
+              <th scope="col">स्थिति</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CHG12345</td>
+              <td>Pending..</td>
+            </tr>
+          </tbody>
+        </table><br><br>
+
+        <h3 class="head">स्वीकार की गई जानकारी</h3>
+        <table class="table tb1">
+          <thead>
+            <tr class="thead-dark">
+              <th scope="col">क्यूआर कोड</th>
+              <th scope="col">फसल आईडी</th>
+              <th scope="col">बैच आईडी</th>
+              <th scope="col">इंस्पेक्टर आई.डी.</th>
+              <th scope="col">इंस्पेक्टर का नाम</th>
+              <th scope="col">अनुमानित निरीक्षण तिथि</th>
+              <th scope="col">स्थिति</th>
+              <th scope="col">इंस्पेक्टर ओटीपी</th>
+              <th scope="col">सत्यापन</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="../../assets/qr.svg" class="icon"></td>
+              <td>CHG12345</td>
+              <td>Batch 21</td>
+              <td>IN2425</td>
+              <td>Swapnil</td>
+              <td>12/03/2019</td>
+              <td>Accepted</td>
+              <td>
+                <form>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="OTP" placeholder="OTP">
+                    <button type="button" class="btn btn-primary btn-sm otp disabled">भेजें</button>
+                  </div>
+                </form>
+              </td>
+              <td>
+                <img src="../../assets/verified.svg" class="icon">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </ng-template>
+    </ngb-tab>
+
+
+
+    <ngb-tab title="बैच की स्थिति">
+      <ng-template ngbTabContent>
+        <br><br>
+
+        <table class="table tb1">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">क्यूआर कोड</th>
+              <th scope="col">बैच आईडी</th>
+              <th scope="col">अवस्था</th>
+              <th scope="col">विवरण स्थिति</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="thead-dark">
+              <td><img src="../../assets/qr.svg" class="icon"></td>
+              <td>BJHF9686</td>
+              <td>Processor</td>
+              <td>View</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab title="बेचना">
+      <ng-template ngbTabContent>
+
+         <ng-template #content let-c="close" let-d="dismiss">
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">बेचना विवरण जोड़ना</h4>
+              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <form>
+                <div class="form-group">
+                  <label for="Cropid"><b>फसल आईडी</b></label>
+                  <select class="form-control">
+                    <option>फसल आईडी का चयन करें</option>
+                    <option value="Administrator">CH_101</option>
+                    <option value="Farmer">CH_102</option>
+                    <option value="Food Processor">CH_103</option>
+                    <option value="Distributer">CH_104</option>
+                    <option value="Retailer">CH_105</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <label for="Cropid"><b>बैच आईडी</b></label>
+                    <select class="form-control">
+                      <option>बैच आईडी चुनें</option>
+                      <option value="Administrator">BH_101</option>
+                      <option value="Farmer">BH_102</option>
+                      <option value="Food Processor">BH_103</option>
+                      <option value="Distributer">BH_104</option>
+                      <option value="Retailer">BH_105</option>
+                  </select>
+                  </div>
+                <div class="form-group">
+                    <label for="CropVariety"><b>फसल विविधता</b></label>
+                    <input type="text" class="form-control" id="CropVariety" placeholder="Crop Variety">
+                  </div>
+                <div class="form-group">
+                  <label for="InspectionDate&Time"><b>निरीक्षण की दिनांक </b></label>
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"><i class="fas fa-calendar-alt"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label for="InspectorName"><b>इंस्पेक्टर का नाम</b></label>
+                    <input type="text" class="form-control" id="Cropid" placeholder="Inspector Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="CropType"><b>मात्रा :</b></label>
+                    <input type="text" class="form-control" id="Quantity" placeholder="Quantity">
+                  </div>
+                  <div class="form-group">
+                    <label for="CropType"><b>न्यूनतम मूल्य :</b></label>
+                    <input type="text" class="form-control" id="Minimum Price" placeholder="Minimum Selling Price">
+                  </div>
+                  <div class="form-group">
+                    <label for="CropType"><b>अधिकतम मूल्य :</b></label>
+                    <input type="text" class="form-control" id="Maximum Price" placeholder="Maximum Selling Price">
+                  </div>
+              </form>
+
+
+            </div>
+            <div class="modal-footer">
+
+              <button type="button" class="btn btn-primary" (click)="c('Save click')">भेजें</button>
+            </div>
+          </ng-template>
+
+          <br><br>
+          <button class="btn btn-success" (click)="open(content)">बेचना</button>
+          <br><br>
+
+
+        <table class="table tb1">
+          <thead>
+            <tr class="thead-dark">
+              <th scope="col">क्यूआर कोड</th>
+              <th scope="col">फसल आईडी</th>
+              <th scope="col">बैच आईडी</th>
+
+              <th scope="col">फसल विविधता</th>
+              <th scope="col">समाप्ति तिथि</th>
+              <th scope="col">फार्म इंस्पेक्टर</th>
+              <th scope="col">निरीक्षण की दिनांक</th>
+              <th scope="col">मात्रा</th>
+              <th scope="col">न्यूनतम मूल्य</th>
+              <th scope="col">अधिकतम मूल्य</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="../../assets/qr.svg" class="icon"></td>
+              <td>CHG12345</td>
+              <td>BJHF9686</td>
+              <td>Arabica</td>
+              <td>11/7/2016</td>
+              <td>John Doe</td>
+              <td>2/8/19</td>
+              <td>100KG</td>
+              <td>Rs 12</td>
+              <td>Rs 15</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab title="निर्माता का अनुरोध">
+      <ng-template ngbTabContent>
+       <br><br>
+
+        <div class="row">
+          <div class="col 4">
+
+            <div class="card">
+              <div class="card-header  bg-warning">
+                  <label><b>बैच आईडी : </b>B_101</label>
+              </div>
+              <div class="card-body cpro">
+                <blockquote class="blockquote mb-0">
+                    <label><b>प्रोसेसर आईडी : </b>P_101</label>
+                    <label><b>प्रोसेसर का नाम :</b> Umang Mavani</label><br>
+                    <label><b>मात्रा :</b> 100 KG</label><br>
+                    <label><b>मूल्य :</b> Rs 1200</label><br>
+                  <button type="button" class="btn btn-success">स्वीकार</button><br><br>
+                  <h3 class="head texthead">3rd सलाह</h3>
+                </blockquote>
+              </div>
+            </div>
+
+          </div>
+          <div class="col 4">
+
+            <div class="card">
+              <div class="card-header bg-warning">
+                  <label><b>Batch ID : </b>B_101</label>
+              </div>
+              <div class="card-body cpro">
+                <blockquote class="blockquote mb-0">
+                  <label><b>प्रोसेसर आईडी : </b>P_102</label>
+                  <label><b>प्रोसेसर का नाम :</b> Nilesh Mishra</label><br>
+                  <label><b>मात्रा:</b> 100 KG</label><br>
+                  <label><b>मूल्य :</b> Rs 1800</label><br>
+                  <button type="button" class="btn btn-success">स्वीकार</button><br><br>
+                  <h2 class="head texthead first tex">1st सलाह</h2>
+                </blockquote>
+              </div>
+            </div>
+
+          </div>
+          <div class="col 4">
+
+              <div class="card">
+                <div class="card-header  bg-warning">
+                  <label><b>Batch ID : </b>B_101</label>
+                </div>
+                <div class="card-body cpro">
+                  <blockquote class="blockquote mb-0">
+                      <label><b>प्रोसेसर आईडी : </b>P_103</label>
+                      <label><b>प्रोसेसर का नाम :</b> Sagar Mistry</label><br>
+                      <label><b>मात्रा :</b> 100 KG</label><br>
+                      <label><b>मूल्य :</b> Rs 1500</label><br>
+                    <button type="button" class="btn btn-success">स्वीकार</button><br><br>
+                    <h3 class="head texthead">2nd सलाह</h3>
+                  </blockquote>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+
+
+  </ngb-tabset>
+
+</div>
+<br><br>
+
+
