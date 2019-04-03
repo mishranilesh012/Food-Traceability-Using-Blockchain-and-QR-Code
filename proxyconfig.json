@@ -1,0 +1,106 @@
+{
+  "/login" :{
+    "target" : "http://localhost:5000",
+    "secure" : false,
+    "logLevel" : "debug",
+    "changeOrigin" : true
+},
+"/adminBatchReq" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/viewFarmerReq" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/batchCheck" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/batchCreate" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/batchInfo" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/getAcceptedBatchInfo" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/verifyOtp" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/updateButtonVerify" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/inspectorDataUpdate" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/readyToSell" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/farmerUpdateSellData" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/getSellInfoProcessor" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/getSellDetailForFarmer" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/sendQuoteFromProcessor" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/displayReqDataFarmer" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+},
+"/approveProcessorReq" :{
+  "target" : "http://localhost:5000",
+  "secure" : false,
+  "logLevel" : "debug",
+  "changeOrigin" : true
+}
+
+
+}
